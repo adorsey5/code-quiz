@@ -139,3 +139,14 @@ function endQuiz() {
       location.href = "highscores.html";
     }
   }
+  // KEYBOARD ENTER KEY FUNCTION
+function checkEnterkey(event) {
+    if (event.key === "Enter") {
+      submitHighscore();
+    }
+  }
+  // BEGIN THE QUIZ ON THE START QUIZ BUTTON
+  startBtn.onclick = startQuiz;
+  // SUBMIT INITIALS FOR HIGH SCORE
+  submitBtn.onclick = submitHighscore;
+  initialsEl.onkeyup = checkEnterkey;
