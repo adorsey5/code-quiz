@@ -43,7 +43,7 @@ THEN I can save my initials and score
 
 Click the following link to visit the webpage:
 
-[A live link to the webpage](https://adorsey5.github.io/pwd-generator/)
+[A live link to the webpage](https://adorsey5.github.io/code-quiz/)
 
 
 The following image is a screenshot of the webpage:
