@@ -17,3 +17,14 @@ function viewHighscores() {
       olHighScoresEl.appendChild(li);
     });
 }
+
+  // CLEAR LOCAL STORAGE FOR HIGH SCORES
+  function clearHighscores() {
+    localStorage.removeItem("highscores");
+    location.reload();
+  }
+  
+  // DISPLAYS THE HIGHSCORES REPORT
+  viewHighscores();
+  
+  document.getElementById("clear").onclick = clearHighscores;
