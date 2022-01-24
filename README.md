@@ -35,6 +35,7 @@ THEN I can save my initials and score
 * Timer
 * Local storage
 * a Web API
+* DOM elements
 
 ---
 
@@ -47,7 +48,7 @@ Click the following link to visit the webpage:
 
 The following image is a screenshot of the webpage:
 
-![Screenshot](Pwd-Generator-Screenshot.png)
+![Screenshot](./assets/images/code-quiz-screenshot.png)
 
 ---
 ## :capital_abcd:Languages and Technology Used :computer:
@@ -74,7 +75,9 @@ For my fourth challenge I had a great deal of guidance from:
  * UM Coding Bootcamp instructor and teacher assistants (TAs)
  * UM Coding Bootcamp Tutor: Jeremy Jones
  * UM Coding Bootcamp Classmates
+ * GitHub
  * Google
+
 
  ---
 
