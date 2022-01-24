@@ -93,3 +93,17 @@ function clickQuestion() {
       showQuestion();
     }
   }
+
+  // END OF THE QUIZ
+function endQuiz() {
+    // DISPLAY THE LAST PAGE
+     var endScreenEl = document.getElementById("last-page"); 
+     endScreenEl.removeAttribute("class");
+    // HIDE THE QUESTIONS
+      questionsEl.setAttribute("class", "hide");
+    // AT THE END OF THE QUIZ THIS CLEARS THE TIMER SET WITH SETINTERVAL
+     clearInterval(timerId);
+     // SHOWS THE USERS FINAL SCORE
+     var finalScoreEl = document.getElementById("final-score");
+     finalScoreEl.textContent = time;
+   }
