@@ -107,3 +107,13 @@ function endQuiz() {
      var finalScoreEl = document.getElementById("final-score");
      finalScoreEl.textContent = time;
    }
+   //TIMER AT THE END OF THE QUIZ
+    function secondTick() {
+    // TIMER IS RESTORED
+    time--;
+    timerEl.textContent = time;
+    // IF TIMER HITS 0 END THE QUIZ
+    if (time <= 0) {
+      endQuiz();
+    }
+  }
