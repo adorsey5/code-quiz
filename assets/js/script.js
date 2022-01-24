@@ -117,3 +117,25 @@ function endQuiz() {
       endQuiz();
     }
   }
+
+  function submitHighscore() {
+    // REMOVE ANY EXTRA SPACES IN THE USER INPUT FOR INITIALS
+      var initials = initialsEl.value.trim();
+      
+      if (initials !== "") {
+      // RETRIEVE HIGHSCORES FROM localstorage OR SHOW EMPTY ARRAY
+      var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+      // SET UP THE NEW SCORE FOR CURRENT USER
+      var newScore = {
+        score: time,
+        initials: initials
+      };
+      
+      // SAVE THE SCORES TO LOCAL STORAGE
+      highscores.push(newScore);
+      localStorage.setItem("highscores", JSON.stringify(highscores));
+  
+      // LINK to HIGH SCORES page
+      location.href = "highscores.html";
+    }
+  }
