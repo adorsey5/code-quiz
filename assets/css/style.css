@@ -1,3 +1,4 @@
+/* Remove browser-enforced styles & Applies CSS vaules for every element */
 * {
     margin: 0;
     padding: 0;
