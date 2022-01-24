@@ -28,3 +28,68 @@ function startQuiz() {
     questionsEl.removeAttribute("class"); 
     showQuestion();
   }
+
+  function showQuestion() {
+    // CLEARS FORMER USER QUESTION CHOICES 
+    choicesEl.innerHTML = "";
+
+    // RETRIEVE THE CURRENT QUESTION FROM ARRAY
+  var currentQuestion = questions[currentQuestionIndex];
+
+  // RENEWED QUESTION-TITLE WITH CURRENT QUESTION
+  var titleEl = document.getElementById("question-title");
+  titleEl.textContent = currentQuestion.title;
+
+  // PASSING THE CALLBACK CHOICE FUNCTION TO LOOP OVER CHOICES IN THE INDEX
+  currentQuestion.choices.forEach(function(choice, i) {
+      //console.log(choice, i);
+
+  // CREATED BUTTON ELEMENT FOR EVERY CHOICE
+    const choiceNode = document.createElement("button");
+    choiceNode.setAttribute("value", choice);
+    choiceNode.setAttribute("class", "choice");
+    // QUESTION CHOICES FORMAT
+    choiceNode.textContent = i + 1 + ". " + choice;
+    
+  // SHOW CHOICES FOR QUESTIONS
+        choicesEl.appendChild(choiceNode);
+  // EVERY CHOICE HAS A CLICK EVENT LISTENER
+    choiceNode.onclick = clickQuestion;
+  });
+}
+
+function clickQuestion() { 
+    // IF USER ANSWERS INCORRECT
+    if (this.value !== questions[currentQuestionIndex].answer) {
+      // WRONG ANSWERS ARE PENALEZED BY 10 SECS
+      time -= 10;
+    if (time < 0) {
+        time = 0;
+      }
+    // SHOWS UPDATED TIMER AND REMARKS
+      timerEl.textContent = time;
+      remarkEl.textContent = "WRONG!";
+      remarkEl.style.fontSize = "100%";
+      remarkEl.style.color = "gray";
+    } else {
+      remarkEl.textContent = "CORRECT!";
+      remarkEl.style.fontSize = "100%";
+      remarkEl.style.color = "gray";
+    }
+  
+    // SHOW WRONG OR CORRECT REMARK
+    remarkEl.setAttribute("class", "remark");
+    setTimeout(function() {
+      remarkEl.setAttribute("class", "hide remark");
+    }, 1000);
+  
+    // SHOW THE NEXT QUESTION IN THE INDEX
+    currentQuestionIndex++;
+  
+    // TIME CHECK
+    if (currentQuestionIndex === questions.length) {
+      endQuiz(); 
+    } else {
+      showQuestion();
+    }
+  }
