@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body { 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .scores { 
+    top: 50px;
+    left: 10px;
+    position: absolute;
+  }
+  
+  a {
+    color: black;
+    transition: color 0.1s;
+    text-decoration: none;
+  }
+  
+ .scores a:hover { 
+    color: #bb85d4;
+  }
